@@ -11,6 +11,7 @@
     <modules>
         <module>OOPS</module>
         <module>Strings</module>
+        <module>Collections</module>
     </modules>
 
     <properties>
