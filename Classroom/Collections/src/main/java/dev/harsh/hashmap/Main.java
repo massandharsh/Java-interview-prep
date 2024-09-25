@@ -4,7 +4,37 @@ import dev.harsh.hashmap.strategy.CustomHashingStrategy;
 import dev.harsh.hashmap.strategy.HashingStrategy;
 import dev.harsh.hashmap.strategy.InternalHashingStrategy;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 public class Main {
+    public static class InnerClass{
+        public static void addNumbers(List<? super Double> list) {
+            list.add(1.0);
+            list.add(2.0);
+            list.add(3.0);
+
+            for(Object integer : list){
+                System.out.println(integer);
+            }
+        }
+        public static void iterate(List<? extends Number> list){
+            for(Number integer : list){
+                System.out.println(integer);
+            }
+        }
+
+        public static void main(String[] args) {
+            List<Number> list = new ArrayList<>();
+            list.add(1);
+            list.add(2);
+            list.add(3);
+            addNumbers(list);
+
+        }
+    }
+
     public static void main(String[] args) {
         HashingStrategy hashingStrategy = new InternalHashingStrategy();
         MyMap<String> map = new MyHashMap<>(hashingStrategy);

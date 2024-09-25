@@ -3,7 +3,10 @@ package dev.harsh.hashmap;
 import dev.harsh.hashmap.strategy.HashingStrategy;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentSkipListSet;
 
 public class MyHashMap<V> implements MyMap<V>{
     private static final double LOAD_FACTOR = 100;
@@ -17,8 +20,14 @@ public class MyHashMap<V> implements MyMap<V>{
         this.hashingStrategy = hashingStrategy;
     }
 
+    public void addNumbers(List<? super Integer> list) {
+        list.add(1);
+        list.add(2);
+    }
+
     @Override
     public boolean isEmpty() {
+
         return noOfElements == 0;
     }
 
